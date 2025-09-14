@@ -24,7 +24,7 @@ function Login() {
           <div className="flex justify-between items-center">
             <input
               type="text"
-              placeholder="Username"
+              placeholder="email login"
               className="w-5/12 p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             />

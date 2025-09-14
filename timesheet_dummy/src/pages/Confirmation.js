@@ -4,7 +4,7 @@ function Confirmation() {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-start">
       <div className="h-1/3 flex items-center justify-center">
-        <img src="/logo.png" alt="Company Logo" className="h-24 mx-auto" />
+        <img src="/logo.png" alt="Company Logo" className="h-40 mx-auto" />
       </div>
       <div className="mt-16 max-w-md w-full bg-white p-6 rounded-lg shadow-2xl">
         <h1
