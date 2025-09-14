@@ -20,18 +20,28 @@ function Review() {
   };
 
   const handleGoBack = () => {
-    navigate("/timesheet");
+    navigate("/timesheet", {
+      state: {
+        startDate: formData.startDate,
+        endDate: formData.endDate,
+        week1Hours: formData.week1Hours,
+        week2Hours: formData.week2Hours,
+        travelHours: formData.travelHours,
+        client: formData.client,
+        state: formData.state,
+      },
+    });
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-4">
+    <div className="min-h-screen bg-white flex flex-col items-center justify-start p-4">
       <h1
         className="text-2xl font-bold mb-4 text-center"
         style={{ fontFamily: "Montserrat, sans-serif" }}
       >
         Review
       </h1>
-      <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow">
+      <div className="max-w-md w-full bg-white p-6 rounded-lg shadow-2xl">
         <div className="space-y-6">
           {/* Current Pay Period */}
           <div>
@@ -91,7 +101,6 @@ function Review() {
               </p>
             </div>
           </div>
-
           {/* Client */}
           <div>
             <label
@@ -126,18 +135,35 @@ function Review() {
               </p>
             </div>
           </div>
+          {/* Travel Hours */}
+          <div>
+            <label
+              className="block text-sm font-medium mb-2"
+              style={{ fontFamily: "Montserrat, sans-serif" }}
+            >
+              Travel Hours:
+            </label>
+            <div className="border border-gray-300 p-2">
+              <p
+                style={{ fontFamily: "Montserrat, sans-serif" }}
+                className="italic"
+              >
+                {formData.travelHours || "Not entered"}
+              </p>
+            </div>
+          </div>
           {/* Buttons */}
-          <div className="flex justify-center space-x-2">
+          <div className="flex justify-center space-x-4">
             <button
               onClick={handleSubmit}
-              className="w-2/3 bg-blue-600 text-white p-1 rounded-2xl hover:bg-blue-700 transition-colors mx-auto block md:w-auto"
+              className="w-1/2 bg-blue-600 text-white p-2 rounded-2xl hover:bg-blue-700 transition-colors md:w-auto"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Submit
             </button>
             <button
               onClick={handleGoBack}
-              className="w-2/3 border-2 border-red-600 text-red-600 font-bold p-1 rounded-2xl hover:bg-red-100 transition-colors mx-auto block md:w-auto"
+              className="w-1/2 bg-gray-500 text-white p-2 rounded-2xl hover:bg-gray-600 transition-colors md:w-auto"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               Go Back
